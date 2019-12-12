@@ -1,142 +1,98 @@
 <template>
-  <div id="base-list-layout">
-    <div class="ui-posts">
-      <div class="ui-post" v-for="page in pages">
-        <div class="ui-post-title">
-          <NavLink :link="page.path">{{ page.title }}</NavLink>
-        </div>
-        
-        <div class="ui-post-summary">
-          {{ page.frontmatter.summary || page.summary }}
-          <!-- <Content :page-key="page.key" slot-key="intro"/>-->
-        </div>
+  <div
+    id="base-list-layout"
+    class="fill-height"
+  >
 
-        <div class="ui-post-author" v-if="page.frontmatter.author">
-          <NavigationIcon/>
-          <span>{{ page.frontmatter.author }} in {{ page.frontmatter.location }}</span>
-        </div>
+    <div class="row my-5">
+      <div class="col-md-12 col-lg-8">
+        <div
+          class="my-5"
+          v-for="page in pages"
+        >
+          <router-link
+            class="text-dark row"
+            :to="page.path"
+          >
+            <div class="col-8">
+              <h2>
+                {{ page.title }}
+              </h2>
 
-        <div class="ui-post-date" v-if="page.frontmatter.date">
-          <ClockIcon/>
-          <span>{{ resovlePostDate(page.frontmatter.date) }}</span>
+              <div class="text-secondary">
+                <p>
+                  {{ page.frontmatter.summary || page.summary }}
+                </p>
+                <small
+                  v-if="page.frontmatter.date"
+                  class="text-gray-light"
+                >{{page.frontmatter.date}}</small>
+              </div>
+            </div>
+            <div class="col-3">
+              <img
+                src="https://picsum.photos/120"
+                :alt="page.title"
+              >
+            </div>
+          </router-link>
         </div>
       </div>
+      <div class="col-md-12 col-lg-4 my-5">
+        <h2>Popular Posts</h2>
+        <p class="text-secondary">What’s trending right now.</p>
+        <hr>
+        <ol class="list-unstyled">
+          <li
+            v-for="post in popularPosts"
+            :key="post.key"
+            class="my-3 popular-list-item"
+          >
+            <router-link :to="post.path">
+              <h3 class="text-dark">
+                {{post.title}}
+              </h3>
+            </router-link>
+          </li>
+        </ol>
+      </div>
     </div>
-    
-    <component v-if="$pagination.length > 1 && paginationComponent" :is="paginationComponent"></component>
   </div>
 </template>
 
 <script>
-  /* global THEME_BLOG_PAGINATION_COMPONENT */
-  
-  import Vue from 'vue'
-  import { NavigationIcon, ClockIcon } from 'vue-feather-icons'
-  import { Pagination, SimplePagination } from '@vuepress/plugin-blog/lib/client/components'
-  
-  export default {
-    components: { NavigationIcon, ClockIcon },
+/* global THEME_BLOG_PAGINATION_COMPONENT */
 
-    data() {
-      return {
-        paginationComponent: null
+import Vue from 'vue'
+import { NavigationIcon, ClockIcon } from 'vue-feather-icons'
+
+export default {
+  components: { NavigationIcon, ClockIcon },
+  computed: {
+
+    currentTag () {
+      if (this.$route.meta) {
+        return this.$route.meta.id;
       }
     },
-    
-    created() {
-      this.paginationComponent = this.getPaginationComponent()
+
+    pages () {
+      return this.$site.pages.filter(page => {
+        return !page.path.startsWith('/tag/') &&
+          !page.path.startsWith('/page/') &&
+          page.path !== '/'
+      })
     },
-    
-    computed: {
-      pages() {
-        return this.$pagination.pages
-      },
-    },
-    
-    methods: {
-      getPaginationComponent() {
-        const n = THEME_BLOG_PAGINATION_COMPONENT
-        if (n === 'Pagination') {
-          return Pagination
-        }
 
-        if (n === 'SimplePagination') {
-          return SimplePagination
-        }
+    popularPosts () {
+      return this.$site.pages.filter(page => page.frontmatter.popular).slice(0, 9)
+    }
+  },
 
-        return Vue.component(n) || Pagination
-      },
-
-      resovlePostDate(date) {
-        return new Date(date.replace(/\-/g, "/").trim()).toDateString()
-      }
+  methods: {
+    resovlePostDate (date) {
+      return new Date(date.replace(/\-/g, "/").trim()).toDateString()
     }
   }
+}
 </script>
-
-<style lang="stylus">
-  .common-layout
-    .content-wrapper
-      padding-bottom 80px
-  
-  .ui-post
-    padding-bottom 25px
-    margin-bottom 25px
-    border-bottom 1px solid #f1f1f1
-    
-    &:last-child
-      border-bottom 0px
-      margin-bottom 0px
-    
-    p
-      margin 0
-  
-  .ui-post-title
-    font-size 28px
-    border-bottom 0
-    
-    a
-      cursor pointer
-      color #000
-      transition all .2s
-      text-decoration none
-      
-      &:hover
-        text-decoration underline
-  
-  .ui-post-summary
-    font-size 14px
-    margin-bottom 15px
-    color rgba(0, 0, 0, 0.54)
-    font-weight 200
-  
-  .ui-post-author
-    display flex
-    align-items center
-    font-size 12px
-    line-height 12px
-    color rgba(0, 0, 0, 0.84)
-    margin-bottom 3px
-    font-weight 400
-    
-    svg
-      margin-right 5px
-      width 14px
-      height 14px
-  
-  .ui-post-date
-    display flex
-    align-items center
-    font-size 12px
-    color rgba(0, 0, 0, 0.54)
-    font-weight 200
-    
-    svg
-      margin-right 5px
-      width 14px
-      height 14px
-</style>
-
-<style src="prismjs/themes/prism-okaidia.css"></style>
-
-

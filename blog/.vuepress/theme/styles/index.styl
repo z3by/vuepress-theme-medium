@@ -3,9 +3,73 @@
 @require './custom-blocks.styl';
 @require './wrapper.styl';
 @require './sw-popup.styl';
-@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
 @require '~vue-themify-icons/themify-icons/themify-icons.css';
+@import 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
-.font-sans {
-  font-family: serif;
+body {
+  letter-spacing: 0.03em;
+  font-size: 16px;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.font-serif {
+  font-family: 'Lora', serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+}
+
+h6 {
+  font-size: 0.6rem;
+}
+
+p {
+  font-size: 14px;
+}
+
+.text-secondary {
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.popular-list-item {
+  counter-increment: popular-counter;
+  position: relative;
+}
+
+.popular-list-item:before {
+  content: '0' counter(popular-counter);
+  position: absolute;
+  left: -2.5rem;
+  top: -0.25rem;
+  color: rgba(0, 0, 0, 0.15);
+  font-size: 1.3rem;
+}
+
+.x-overflow-scroll {
+  overflow-x: scroll;
 }
