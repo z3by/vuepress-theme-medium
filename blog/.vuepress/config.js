@@ -1,12 +1,12 @@
 module.exports = {
   title: 'VuePress Blog Example',
   description: 'This is a blog example built by VuePress',
-  theme: '@vuepress/theme-blog', // OR shortcut: @vuepress/blog
+  theme: require.resolve('../../'),
   themeConfig: {
     /**
      * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
      */
-    modifyBlogPluginOptions(blogPluginOptions) {
+    modifyBlogPluginOptions (blogPluginOptions) {
       return blogPluginOptions
     },
     /**

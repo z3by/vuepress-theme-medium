@@ -7,17 +7,30 @@
     "name": "Ahmad Mostafa",
     "email": "zoaby.am@gmail.com"
   },
+  "files": [
+    "index.js",
+    "styles",
+    "layouts",
+    "global-components",
+    "components"
+  ],
+  "keywords": [
+    "vuepress",
+    "vuepress-theme",
+    "vuepress-blog",
+    "vuepress",
+    "vue",
+    "vuepress-theme-blog",
+    "vuepress-theme-medium"
+  ],
   "repository": "/z3by/vuepress-theme-medium/vuepress-theme-medium",
   "scripts": {
     "dev": "vuepress dev blog",
     "build": "vuepress build blog"
   },
   "license": "MIT",
-  "devDependencies": {
-    "@vuepress/theme-blog": "^1.0.0",
-    "vuepress": "^1.0.0"
-  },
   "dependencies": {
+    "vuepress": "^1.0.0",
     "vue-themify-icons": "^1.0.0"
   }
 }

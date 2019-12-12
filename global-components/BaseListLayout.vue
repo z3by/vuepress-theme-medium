@@ -9,6 +9,7 @@
         <div
           class="my-5"
           v-for="page in pages"
+          :key="page.key"
         >
           <router-link
             class="text-dark row"
@@ -68,20 +69,23 @@ import { NavigationIcon, ClockIcon } from 'vue-feather-icons'
 
 export default {
   components: { NavigationIcon, ClockIcon },
+
   computed: {
 
-    currentTag () {
-      if (this.$route.meta) {
-        return this.$route.meta.id;
-      }
-    },
-
     pages () {
+      if (this.$route.meta.pid == 'tag') {
+        const pages = this.$tag.list.filter(tag => {
+          return tag.path === this.$route.path
+        })[0].pages
+        return pages
+      }
+
       return this.$site.pages.filter(page => {
         return !page.path.startsWith('/tag/') &&
           !page.path.startsWith('/page/') &&
           page.path !== '/'
       })
+
     },
 
     popularPosts () {
@@ -93,6 +97,7 @@ export default {
     resovlePostDate (date) {
       return new Date(date.replace(/\-/g, "/").trim()).toDateString()
     }
-  }
+  },
+
 }
 </script>
