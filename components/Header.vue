@@ -1,25 +1,14 @@
 <template>
   <header>
 
-    <nav class="navbar navbar-expand-lg py-4 navbar-light border-0 container">
+    <nav class="navbar d-flex py-4 navbar-light border-0 container">
       <router-link
         class="navbar-brand font-serif font-weight-bold"
         to="/"
-      >{{$site.title}}</router-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
+      >{{$site.title}}
+      </router-link>
       <div
-        class="navbar-nav ml-auto align-items-center search-wrapper overflow-hidden"
+        class="d-flex ml-auto align-items-center search-wrapper overflow-hidden"
         :class="{focused: searchExpanded}"
       >
         <button
@@ -84,12 +73,31 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.navbar {
+  @media (max-width: $MQNarrow) {
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
 .search-wrapper {
   width: 2rem;
   transition: all 0.2s ease;
+
+  @media (max-width: $MQNarrow) {
+    width: 100%;
+    align-items: end;
+    margin: 2rem 0;
+    border: 1px solid #999;
+  }
 }
 
 .search-wrapper.focused {
   width: 20rem;
+
+  @media (max-width: $MQNarrow) {
+    width: 100%;
+    align-items: end;
+  }
 }
 </style>

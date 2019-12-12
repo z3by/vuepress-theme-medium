@@ -1,7 +1,7 @@
 <template>
   <div id="vuperess-theme-blog__post-layout">
-    <div class="vuepress-blog-theme-content">
-      <div class="my-3">
+    <div class="vuepress-blog-theme-content mt-5">
+      <div class="my-5">
         <h1 class="h1 font-weight-light font-serif">{{$page.title}}</h1>
       </div>
       <Content />
