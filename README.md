@@ -2,12 +2,22 @@
 
 > Medium-Like Vuepress blog theme
 
-## Development
+
+## Install
 
 ```bash
-yarn dev
-yarn build
+yarn add vuepress-theme-medium -D
+# OR npm install vuepress-theme-medium -D
 ```
 
-For more details, please head VuePress's [documentation](https://v1.vuepress.vuejs.org/).
+## Usage
 
+```js
+// .vuepress/config.js
+module.exports = {
+  theme: 'medium',
+  themeConfig: {
+    // Please head documentation to see the available options.
+  }
+}
+```
