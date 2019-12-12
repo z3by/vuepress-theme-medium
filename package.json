@@ -1,0 +1,23 @@
+{
+  "name": "vuepress-theme-medium",
+  "version": "0.0.1",
+  "description": "Medium-Like Vuepress blog theme",
+  "main": "index.js",
+  "authors": {
+    "name": "Ahmad Mostafa",
+    "email": "zoaby.am@gmail.com"
+  },
+  "repository": "/z3by/vuepress-theme-medium/vuepress-theme-medium",
+  "scripts": {
+    "dev": "vuepress dev blog",
+    "build": "vuepress build blog"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@vuepress/theme-blog": "^1.0.0",
+    "vuepress": "^1.0.0"
+  },
+  "dependencies": {
+    "vue-themify-icons": "^1.0.0"
+  }
+}
