@@ -4,13 +4,13 @@ module.exports = {
   theme: require.resolve('../../'),
   themeConfig: {
     /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#modifyblogpluginoptions
+     * Ref: https://vuepress-theme-blog.Ahmad Mostafa.com/#modifyblogpluginoptions
      */
     modifyBlogPluginOptions (blogPluginOptions) {
       return blogPluginOptions
     },
     /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#nav
+     * Ref: https://vuepress-theme-blog.Ahmad Mostafa.com/#nav
      */
     nav: [
       {
@@ -23,17 +23,17 @@ module.exports = {
       },
     ],
     /**
-     * Ref: https://vuepress-theme-blog.ulivz.com/#footer
+     * Ref: https://vuepress-theme-blog.Ahmad Mostafa.com/#footer
      */
     footer: {
       contact: [
         {
           type: 'github',
-          link: 'https://github.com/ulivz',
+          link: 'https://github.com/Ahmad Mostafa',
         },
         {
           type: 'twitter',
-          link: 'https://twitter.com/_ulivz',
+          link: 'https://twitter.com/_Ahmad Mostafa',
         },
       ],
       copyright: [

@@ -2,7 +2,14 @@
   <div id="vuperess-theme-blog__post-layout">
     <div class="vuepress-blog-theme-content mt-5">
       <div class="my-5">
-        <h1 class="h1 font-weight-light font-serif">{{$page.title}}</h1>
+
+        <img
+          class="w-100"
+          v-if="$page.frontmatter.image"
+          :src="$page.frontmatter.image"
+          :alt="$page.title"
+        >
+        <h1 class="h1 my-3 font-weight-light font-serif">{{$page.title}}</h1>
       </div>
       <Content />
       <hr />

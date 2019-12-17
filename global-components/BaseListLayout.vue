@@ -32,7 +32,7 @@
             </div>
             <div class="col-3">
               <img
-                src="https://picsum.photos/120"
+                :src="page.frontmatter.image"
                 :alt="page.title"
               >
             </div>

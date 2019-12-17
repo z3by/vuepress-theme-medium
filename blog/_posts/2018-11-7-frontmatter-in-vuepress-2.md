@@ -3,8 +3,9 @@ date: 2018-11-7
 tag: 
   - frontmatter
   - vuepress
-author: ULIVZ
-location: Hangzhou  
+author: Ahmad Mostafa
+location: Jordan
+image: https://picsum.photos/120
 ---
 
 # Front Matter in VuePress

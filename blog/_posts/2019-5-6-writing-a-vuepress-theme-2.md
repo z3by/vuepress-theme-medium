@@ -4,8 +4,9 @@ tag:
   - theme
   - blog
   - vuepress
-author: ULIVZ
-location: Shanghai  
+author: Ahmad Mostafa
+location: Jordan  
+image: https://picsum.photos/120
 ---
 
 # Writing a VuePress theme
