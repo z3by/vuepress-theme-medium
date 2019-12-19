@@ -3,7 +3,7 @@
 > Medium-Like Vuepress blog theme
 
 ## Sites
-- [Demo](vuepress-theme-medium.z3by.com)
+- [Demo](https://vuepress-theme-medium.z3by.com)
 
 ## Install
 
