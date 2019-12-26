@@ -3,8 +3,8 @@
     id="base-list-layout"
     class="fill-height"
   >
-    <div class="row my-5 py-5">
-      <div class="col-md-12 col-lg-8">
+    <div class="row my-5 justify-content-between">
+      <div class="col-md-12 col-lg-7">
         <post-item
           v-for="page in pages"
           :key="page.key"

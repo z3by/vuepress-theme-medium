@@ -1,7 +1,6 @@
 <template>
   <header>
-
-    <nav class="navbar d-flex py-4 navbar-light border-0 container">
+    <nav class="navbar py-3 d-flex navbar-light border-0 container">
       <router-link
         class="navbar-brand font-serif font-weight-bold"
         to="/"

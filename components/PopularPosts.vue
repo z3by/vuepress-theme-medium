@@ -10,12 +10,13 @@
       <li
         v-for="post in popularPosts"
         :key="post.key"
-        class="my-3 popular-list-item"
+        class="mb-5 popular-list-item"
       >
         <router-link :to="post.path">
-          <h3 class="text-dark">
+          <h3 class="text-dark h6">
             {{post.title}}
           </h3>
+          <p class="text-secondary">{{post.frontmatter.description}}</p>
         </router-link>
       </li>
     </ol>

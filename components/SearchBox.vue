@@ -187,23 +187,23 @@ export default {
 
   input {
     cursor: text;
-    width: 10rem;
+    width: 0rem;
     height: 2rem;
     color: lighten($textColor, 25%);
     display: inline-block;
-    border: 1px solid darken($borderColor, 10%);
+    border: none;
     border-radius: 2rem;
     font-size: 0.9rem;
     line-height: 2rem;
     padding: 0 0.5rem 0 2rem;
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease-out;
     background: #fff url('../assets/search.svg') 0.6rem 0.5rem no-repeat;
     background-size: 1rem;
 
     &:focus {
       cursor: auto;
-      border-color: $accentColor;
+      width: 15rem;
     }
   }
 

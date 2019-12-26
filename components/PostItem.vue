@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-5">
     <router-link
       class="text-dark row"
       :to="page.path"

@@ -5,6 +5,7 @@ tags:
   - vuepress
   - blog
 title: Markdown Demo 1
+description: This is s brief description
 image: https://picsum.photos/id/30/400/300
 featured: true
 ---

@@ -5,7 +5,7 @@
 @require './sw-popup.styl';
 @require '~vue-themify-icons/themify-icons/themify-icons.css';
 @import 'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css';
-@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gelasio&display=swap');
 
 body {
   letter-spacing: 0.03em;
@@ -21,7 +21,7 @@ body {
 }
 
 .font-serif {
-  font-family: 'Lora', serif;
+  font-family: 'Gelasio', serif;
 }
 
 h1 {
@@ -64,12 +64,73 @@ p {
 .popular-list-item:before {
   content: '0' counter(popular-counter);
   position: absolute;
-  left: -2.5rem;
-  top: -0.25rem;
+  left: -3rem;
+  top: 0rem;
   color: rgba(0, 0, 0, 0.15);
-  font-size: 1.3rem;
+  font-size: 2rem;
+  line-height: 1;
 }
 
 .x-overflow-scroll {
   overflow-x: scroll;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 1rem 0;
+  display: block;
+  overflow-x: auto;
+}
+
+tr {
+  border-top: 1px solid #dfe2e5;
+
+  &:nth-child(2n) {
+    background-color: #f6f8fa;
+  }
+}
+
+th, td {
+  border: 1px solid #dfe2e5;
+  padding: 0.6em 1em;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.65rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid $borderColor;
+}
+
+h3 {
+  font-size: 1.35rem;
+}
+
+a.header-anchor {
+  font-size: 0.85em;
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  margin-top: 0.125em;
+  opacity: 0;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+code, kbd, .line-number {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+p, ul, ol {
+  line-height: 1.7;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid $borderColor;
 }

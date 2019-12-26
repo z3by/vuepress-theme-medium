@@ -4,6 +4,7 @@ tags:
   - Vue.js
   - Javascript
 title: Markdown Demo 4
+description: This is s brief description
 image: https://picsum.photos/id/120/400/300
 featured: true
 popular: true
