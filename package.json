@@ -1,6 +1,6 @@
 {
   "name": "vuepress-theme-medium",
-  "version": "2.2.3",
+  "version": "0.1.0",
   "description": "Medium-Like blog theme for VuePress",
   "main": "index.js",
   "files": [
