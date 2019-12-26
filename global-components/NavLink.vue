@@ -1,5 +1,6 @@
 <template>
   <router-link
+    class="nav-link"
     :to="normalizedlink"
     v-if="!isExternal(normalizedlink)"
     :exact="exact"
@@ -9,7 +10,7 @@
   <a
     v-else
     :href="normalizedlink"
-    class="external"
+    class="nav-link external"
     :target="isMailto(normalizedlink) || isTel(normalizedlink) ? null : '_blank'"
     :rel="isMailto(normalizedlink) || isTel(normalizedlink) ? null : 'noopener noreferrer'"
   >
@@ -50,7 +51,7 @@ export default {
 
 <style lang="stylus">
 .nav-link
-  color #222
+  color #000
 
 .nav-link
   &:hover, &.router-link-active

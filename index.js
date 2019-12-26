@@ -6,7 +6,7 @@ module.exports = (themeConfig, ctx) => {
     summaryLength:
       typeof themeConfig.summaryLength === "number"
         ? themeConfig.summaryLength
-        : 400,
+        : 200,
     pwa: !!themeConfig.pwa
   });
 
@@ -66,11 +66,6 @@ module.exports = (themeConfig, ctx) => {
     ]
   ];
 
-  if (themeConfig.socialShare && themeConfig.socialShareNetworks) {
-    plugins.push(
-      ["social-share", { networks: themeConfig.socialShareNetworks }]
-    )
-  }
 
   if (themeConfig.sitemap && themeConfig.hostname) {
     plugins.push([

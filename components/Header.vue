@@ -1,61 +1,49 @@
 <template>
-  <header
-    id="header"
-    class="shadow"
-  >
-    <div class="p-3 d-flex justify-content-between">
+  <header>
+
+    <nav class="navbar d-flex py-4 navbar-light border-0 container">
       <router-link
+        class="navbar-brand font-serif font-weight-bold"
         to="/"
-        class="text-decoration-none h4"
-      >
-        {{ $site.title }}
+      >{{$site.title}}
       </router-link>
+
       <SearchBox />
-    </div>
-    <nav class="px-5">
-      <el-menu
-        v-if="$themeConfig.nav"
-        :default-active="activeIndex"
-        mode="horizontal"
-        class="d-flex justify-content-center border-0"
-      >
-        <el-menu-item
-          v-for="(item, index) in $themeConfig.nav"
-          :index="index.toString()"
-          :key="item.text"
-          @click="$router.push(item.link)"
+    </nav>
+
+    <nav class="navbar navbar-light border-0 container x-overflow-scroll">
+      <ul class="navbar-nav mx-auto d-flex flex-row">
+        <li
+          class="text-uppercase mx-2"
+          v-for="tag in $tag.list"
+          :key="tag.name"
         >
           <router-link
-            :to="item.link"
-            class="text-decoration-none d-block h-100 w-100"
+            class="nav-link text-nowrap "
+            :to="tag.path"
           >
-            <i
-              v-if="item.icon"
-              :class="item.icon"
-            ></i>
-            {{ item.text }}
+            {{tag.name}}
           </router-link>
-        </el-menu-item>
-      </el-menu>
+
+        </li>
+      </ul>
     </nav>
   </header>
 </template>
 
 <script>
-import SearchBox from "./SearchBox";
+import SearchBox from './SearchBox'
 
 export default {
   components: { SearchBox },
-  data () {
-    return {
-      activeIndex: '0',
-    };
-  },
-};
+}
 </script>
 
-<style lang="stylus">
-.el-menu-item.is-active {
-  border-bottom: 3px solid $accentColor !important;
+<style lang="stylus" scoped>
+.navbar {
+  @media (max-width: $MQNarrow) {
+    flex-direction: column;
+    flex-grow: 1;
+  }
 }
 </style>

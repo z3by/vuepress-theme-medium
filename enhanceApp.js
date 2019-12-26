@@ -1,6 +1,3 @@
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default ({
     Vue, // the version of Vue being used in the VuePress app
@@ -8,5 +5,5 @@ export default ({
     router, // the router instance for the app
     siteData // site metadata
 }) => {
-    Vue.use(ElementUI);
+
 }
