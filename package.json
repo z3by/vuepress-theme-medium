@@ -1,0 +1,73 @@
+{
+  "name": "vuepress-theme-medium",
+  "version": "2.2.3",
+  "description": "Medium-Like blog theme for VuePress",
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "enhanceApp.js",
+    "styles",
+    "layouts",
+    "global-components",
+    "fonts",
+    "components"
+  ],
+  "keywords": [
+    "vuepress",
+    "vuepress-theme",
+    "vuepress-blog",
+    "vuepress",
+    "vue",
+    "vuepress-theme-blog",
+    "vuepress-theme-medium"
+  ],
+  "scripts": {
+    "test": "npm run lint && jest",
+    "lint": "disable",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "example:dev": "vuepress dev example --temp example/.temp",
+    "example:build": "vuepress build example --temp example/.temp",
+    "prepublishOnly": "npm run example:build && conventional-changelog -p angular -r 2 -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "url": "z3by/vuepress-theme-medium",
+    "type": "git"
+  },
+  "author": {
+    "email": "zoaby.am@gmail.com",
+    "name": "Ahmad Mostafa",
+    "url": "https://ahmadmostafa.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@vuepress/plugin-blog": "^1.2.5",
+    "@vuepress/plugin-google-analytics": "^1.1.0",
+    "@vuepress/plugin-medium-zoom": "1.0.0",
+    "@vuepress/plugin-nprogress": "1.0.0",
+    "@vuepress/plugin-pwa": "1.0.0",
+    "@vuepress/plugin-search": "1.0.0",
+    "@vuepress/theme-blog": "^1.2.5",
+    "bootstrap": "^4.3.1",
+    "element-ui": "^2.13.0",
+    "remove-markdown": "^0.3.0",
+    "vue-feather-icons": "^4.21.0",
+    "vue-themify-icons": "^1.0.0",
+    "vuepress-plugin-disqus": "^0.1.1",
+    "vuepress-plugin-reading-progress": "^1.0.7",
+    "vuepress-plugin-reading-time": "^0.1.1",
+    "vuepress-plugin-seo": "^0.1.2",
+    "vuepress-plugin-sitemap": "^2.1.2",
+    "vuepress-plugin-smooth-scroll": "^0.0.4",
+    "vuepress-plugin-social-share": "^0.0.6",
+    "vuepress-theme-vuetify": "^1.0.0"
+  },
+  "devDependencies": {
+    "conventional-changelog-cli": "^2.0.1",
+    "eslint-config-sherry": "0.0.1",
+    "vuepress": "^1.0.0"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
