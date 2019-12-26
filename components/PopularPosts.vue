@@ -4,7 +4,6 @@
     v-if="popularPosts.length"
   >
     <h2>Popular Posts</h2>
-    <p class="text-secondary">What’s trending right now.</p>
     <hr>
     <ol class="list-unstyled">
       <li

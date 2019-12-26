@@ -36,7 +36,7 @@ export default {
   p {
     font-family: 'Lora', serif;
     margin-top: 0.86em;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   li {
